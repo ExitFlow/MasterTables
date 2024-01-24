@@ -1,0 +1,35 @@
+{{define "title"}}Add Note{{end}}
+{{define "head"}}{{end}}
+{{define "content"}}
+	<div class="pcoded-main-container">
+		<div class="pcoded-wrapper">
+			<div class="container">
+				<div class="page-header">
+					<h1>{{template "title" .}}</h1>
+				</div>
+
+				<form id="form" method="post">
+					<div class="form-group">
+						<label for="note">Nota</label>
+						<div>
+							<textarea rows="5" class="form-control" id="note" name="note" placeholder="Escriba su nota aqui..." value=""></textarea>
+						</div>
+					</div>
+
+					<a title="Grabar" class="btn btn-success" role="submit" onclick="document.getElementById('form').submit();">
+						<span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Save
+		</a>
+					<a title="Volver a las notas" class="btn btn-danger" role="button" href="{{$.BaseURI}}notepad">
+						<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Back
+		</a>
+
+					<input type="hidden" name="token" value="{{.token}}">
+				</form>
+
+				{{template "footer" .}}
+			</div>
+		</div>
+	</div>
+
+{{end}}
+{{define "foot"}}{{end}}

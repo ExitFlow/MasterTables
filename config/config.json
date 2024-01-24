@@ -1,0 +1,69 @@
+{
+	"Database": {
+		"Type": "MySQL",
+		"Bolt": {
+			"Path": "gowebapp.db"
+		},
+		"MongoDB": {
+			"URL": "127.0.0.1",
+			"Database": "gowebapp"
+		},
+		"MySQL": {
+			"Username": "usexitflow",
+			"Password": "ExitFlowUser",
+			"Name": "exitflow",
+			"Hostname": "data.exitflow.cl.",
+			"Port": 3306,
+			"Parameter": "?parseTime=true"
+		}
+	},
+	"Email": {
+		"Username": "",
+		"Password": "",
+		"Hostname": "",
+		"Port": 25,
+		"From": ""
+	},
+	"Recaptcha": {
+		"Enabled": false,
+		"Secret": "",
+		"SiteKey": ""
+	},
+	"Server": {
+		"Hostname": "",
+		"UseHTTP": true,
+		"UseHTTPS": false,
+		"HTTPPort": 80,
+		"HTTPSPort": 443,
+		"CertFile": "",
+		"KeyFile": ""
+	},
+	"Session": {
+		"SecretKey": "@3x1tfl0w3nc0d3$3cr3t",
+		"Name": "gosess",
+		"Options": {
+			"Path": "/",
+			"Domain": "",
+			"MaxAge": 28800,
+			"Secure": false,
+			"HttpOnly": true
+		}
+	},
+	"Template": {
+		"Root": "base",
+		"Children": [
+			"partial/menu",
+			"partial/footer",
+			"partial/navbar",
+			"partial/navbarvert",
+			"partial/navbarhorz"
+		]
+	},
+	"View": {
+		"BaseURI": "/",
+		"Extension": "tmpl",
+		"Folder": "template",
+		"Name": "blank",
+		"Caching": true
+	}
+}

@@ -1,0 +1,133 @@
+{{define "navbarvert"}}
+    <!--    INICIO MENU VERTICAL -->
+
+    <nav class="pcoded-navbar">
+        <div class="navbar-wrapper">
+            <div class="navbar-brand header-logo">
+                <a target="_blank" class="b-brand">
+                    <img src="/static/images/Logo_nuevo_Blanco.png" 
+                    class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" 
+                    alt="ExitFlow" 
+                    width="50%" 
+                    height="110%">
+                </a>
+                <a class="mobile-menu" id="mobile-collapse" href="javascript:">
+                    <span></span></a>
+                <span class="nav-image-container"></span>
+
+            </div>
+            <div class="navbar-content scroll-div">
+                <ul class="nav pcoded-inner-navbar">
+                    <li class="nav-item pcoded-menu-caption">
+                        <label>Navegación</label>
+                    </li>
+                    {{$val := "cerrado"}}
+                    {{range $n := .opciones}}
+                        {{if (eq .Exec "nav-link")}}
+                            {{if eq $val "abierto"}}
+                            </li>
+                        {{end}}
+                        {{$val = "cerrado"}}
+                        <li data-username="dashboard Default Ecommerce CRM Analytics Crypto Project" class="nav-item pcoded-hasmenu">
+                            <a href="" class="nav-link">
+                                <span class="pcoded-micon">
+                                    <i class="feather icon-home"></i>
+                                </span>
+                                <span class="pcoded-mtext">Inicio</span></a>
+
+                            {{$val = "abierto"}}
+                        {{else}}
+                            <!-- <ul class="pcoded-submenu">
+                                <li data-username="basic components Button Alert Badges breadcrumb Paggination progress Tooltip popovers Carousel Cards Collapse Tabs pills Modal Grid System Typography Extra Shadows Embeds" class="nav-item">
+                                    <a href="{{$.BaseURI}}{{.Url}}" class="{{.Exec}}">
+                                        <span class="pcoded-micon">
+                                            <i class="{{.InternalName}}"></i>
+                                        </span>
+                                        <span class="pcoded-mtext">{{.Name}}</span>
+                                    </a>
+                                </li>
+                            </ul>-->
+
+                            <!--<ul class="pcoded-submenu">
+                                      <li class=""><a href="{{$.BaseURI}}{{.Url}}" class=""><i class="feather icon-bar-chart-2"></i>Dashboard</a></li>
+                                   </ul>-->
+                            <li data-username="Disabled Menu" class="">
+                                <a href="{{$.BaseURI}}{{.Url}}" class="nav-item">
+                                    <span class="pcoded-micon">
+                                        <i class="{{.InternalName}}"></i>
+                                    </span><span class="pcoded-mtext">{{.Name}}</span>
+                                {{end}}
+
+                            {{end}}
+                            {{if $val = "abierto"}}
+                            </li>
+                        {{end}}
+                        <!-- <li data-username="Disabled Menu" class="nav-item">
+                    <a href="{{.BaseURI}}about" class="nav-item">
+                        <span class="pcoded-micon">
+                            <i class="feather icon-book"></i>
+                        </span>
+                        <span class="pcoded-mtext">Acerca de</span>
+                    </a>
+                </li>-->
+                        <li class="nav-item pcoded-menu-caption">
+                            <label>Salir</label>
+                        </li>
+                        <li data-username="Disabled Menu" class="nav-item">
+                            <a href="{{.BaseURI}}logout" class="nav-item">
+                                <span class="pcoded-micon">
+                                    <i class="feather icon-log-out"></i>
+                                </span>
+                                <span class="pcoded-mtext">Logout</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- [ navigation menu ] start -->
+    <!-- <nav class="pcoded-navbar">
+        <div class="navbar-wrapper">
+            <div class="navbar-brand header-logo">
+                <!<a href="index.html" class="b-brand">
+                    <div class="b-bg">
+                        <i class="feather icon-trending-up"></i>
+                    </div>
+                    <span class="b-title">Datta Able</span>
+                </a>
+                <a class="mobile-menu" id="mobile-collapse" href="#!"><span></span></a>
+                <a target="_blank" class="b-brand">
+                    <img src="/static/images/Logo_nuevo.png" 
+                    class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" 
+                    alt="ExitFlow" 
+                    width="50%" 
+                    height="90%">
+                </a>
+                <a class="mobile-menu" id="mobile-collapse" href="javascript:">
+                    <span></span></a>
+            </div>
+            <div class="navbar-content scroll-div">
+                <ul class="nav pcoded-inner-navbar">
+                    <li class="nav-item pcoded-menu-caption">
+                        <label>Navegación</label>
+                    </li>
+                    <li data-username="dashboard Default Ecommerce CRM Analytics Crypto Project" class="nav-item pcoded-hasmenu">
+                        <a href="" class="nav-link"><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Inicio</span></a>
+                        <ul class="pcoded-submenu">
+                            <li class=""><a href="/articulo/dashboard" class=""><i class="feather icon-bar-chart-2"></i>Dashboard</a></li>
+                            <li class=""><a href="/articulo/articulosProveedor" class=""><i class="feather icon-file-text"></i>Articulos</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item pcoded-menu-caption">
+                        <label>Salir</label>
+                    </li>
+                    <li data-username="Documentation" class="nav-item"><a href="{{.BaseURI}}logout" class="nav-link" target="_blank"><span class="pcoded-micon"><i class="feather icon-log-out"></i></span><span class="pcoded-mtext">Logout</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>-->
+    <!-- [ navigation menu ] end -->
+    <!--    FIN MENU VERTICAL -->
+{{end}}

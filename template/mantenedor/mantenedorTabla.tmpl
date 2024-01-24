@@ -1,0 +1,100 @@
+{{define "title"}}Mantenedor de Tablas{{end}}
+{{define "head"}}{{end}}
+{{define "content"}}
+	<div class="pcoded-main-container">
+		<div class="pcoded-wrapper">
+			<div class="pcoded-content">
+				<div class="pcoded-inner-content">
+					<div id="flash-container">
+						{{range $fm := .flashes}}
+							<div id="flash-message" class="alert alert-box-fixed0 alert-box-fixed alert-dismissible {{.Class}}" role="alert">
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+									<span aria-hidden="true">&times;</span></button>
+								{{.Message}}</div>
+							<!-- <div data-alert id="flash-message" class="alert-box-fixed0 alert-box-fixed {{.Class}}">{{.Message}}<a href="#" class="close">&times;</a></div> -->
+						{{end}}
+					</div>
+					<div class="main-body">
+						<div class="page-header">
+							<h3>Mantenedor de Tablas</h3>
+						</div>
+						<br>
+					</div>
+					<div class="row">
+						<div class="col-xl-12">
+							<div class="card" style="padding: 1px;">
+								<div class="card-block table-border-style">
+									<form method="post">
+										<div class="form-row">
+											<div class="form-group col-md-2">
+												<label>Tablas:</label>
+												<select class="form-control" name="IdTabla" id="IdTabla">
+													<option value="">Seleccione Tabla</option>
+													{{range $n := .CargaCbxListaTabla}}
+														<option value="{{.IdTabla}}">{{.NombreTabla}}</option>
+													{{end}}
+												</select>
+											</div>
+											<div class="form-group col-md-4 d-flex align-items-end justify-content-between" style="margin-top: 1em;">
+												<button type="submit" class="btn btn-success mb-2">Buscar</button>
+												<a href="{{$.BaseURI}}mantenedor/limpiarFiltroListaTabla" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Limpiar Filtro</a>
+											</div>
+											<input type="hidden" name="token" value="{{.token}}">
+											<input type="hidden" name="validarEntrada" value="2">
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="card">
+								<div class="card-block">
+									<div class="table-responsive">
+										<table id="zero-configuration" class="display table nowrap table-striped table-hover" style="width:100%">
+											<thead>
+												<tr>
+													{{if .ListaTablas}}
+														<!-- Solo intenta acceder si hay elementos -->
+														{{range $key, $value := (index .ListaTablas 0)}}
+															<th>{{$key}}</th>
+														{{end}}
+														<th>Acción</th>
+														<!-- Columna de acción fija -->
+													{{else}}
+														<!-- Puedes elegir qué hacer si no hay datos, como mostrar un mensaje o encabezados predeterminados -->
+														<th>No hay datos disponibles</th>
+													{{end}}
+												</tr>
+											</thead>
+											<tbody>
+												{{range $row := .ListaTablas}}
+													<!-- Itera sobre las filas -->
+													<tr>
+														{{range $key, $value := $row}}
+															<!-- Itera sobre cada columna/valor en la fila -->
+															<td>{{$value}}</td>
+														{{end}}
+														<td>
+															<!-- Aquí puedes poner tus botones de acción o enlaces -->
+															<button>Eliminar</button>
+															<button>Actualizar</button>
+															<!-- Más acciones según sea necesario -->
+														</td>
+													</tr>
+												{{end}}
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{{end}}
+{{define "foot"}}{{end}}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="author" content="">
+
+		<title>{{template "title" .}}</title>
+
+		<!-- Favicons from http://realfavicongenerator.net -->
+		<link rel="icon" href="/static/images/Logo_nuevo.png" type="image/png">
+		<link rel="icon" href="/static/images/Logo_nuevo.png" type="image/png">
+
+		
+
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-TileImage" content="/static/favicons/mstile-144x144.png">
+
+		{{CSS "static/css/style.css"}}
+		{{CSS "static/fonts/fontawesome/css/fontawesome-all.min.css"}}
+		{{CSS "static/plugins/animation/css/animate.min.css"}}
+
+		{{CSS "static/plugins/data-tables/css/datatables.min.css"}}
+
+		{{template "head" .}}
+	</head>
+
+	<body>
+
+		{{if eq .AuthLevel "auth"}}
+
+			{{template "navbarvert" .}}
+			{{template "navbarhorz" .}}
+			{{template "content" .}}
+		{{else}}
+			{{template "content" .}}
+		{{end}}
+
+		{{JS "static/js/vendor-all.min.js"}}
+		{{JS "static/plugins/bootstrap/js/bootstrap.min.js"}}
+		{{JS "static/js/pcoded.min.js"}}
+        {{JS "static/js/validaciones.js"}}
+		{{JS "static/plugins/data-tables/js/datatables.min.js"}}
+        {{JS "static/js/pages/tbl-datatable-custom.js"}}
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+		{{template "foot" .}}
+
+	</body>
+</html>

@@ -1,0 +1,204 @@
+{{define "navbar"}}
+
+    <!-- [ Pre-loader ] start -->
+    <div class="loader-bg">
+        <div class="loader-track">
+            <div class="loader-fill"></div>
+        </div>
+    </div>
+    <!--    INICIO MENU VERTICAL -->
+    <nav class="pcoded-navbar">
+        <div class="navbar-wrapper">
+            <div class="navbar-brand header-logo">
+                <a target="_blank"
+                    class="b-brand">
+                    <img src="/static/images/logo_flow.png" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" width="70%" height="90%">
+                </a>
+                <a class="mobile-menu" id="mobile-collapse" href="javascript:">
+                    <span></span></a>
+            </div>
+            <div class="navbar-content scroll-div">
+                <ul class="nav pcoded-inner-navbar">
+                    <li class="nav-item pcoded-menu-caption">
+                        <label>Navegación</label>
+                    </li>
+                    <li data-username="basic components Button Alert Badges breadcrumb Paggination progress Tooltip popovers Carousel Cards Collapse Tabs pills Modal Grid System Typography Extra Shadows Embeds" class="nav-item pcoded-hasmenu">
+                        <a href="javascript:" class="nav-link ">
+                            <span class="pcoded-micon">
+                                <i class="feather icon-file"></i>
+                            </span>
+                            <span class="pcoded-mtext">Venta</span></a>
+                        <ul class="pcoded-submenu">
+                            <span class="pcoded-micon">
+                                <li class=""></span>
+                                <a href="" class="">Cotización</a>
+                            </li>
+                            <li class="">
+                                <a href="" >Pago</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li data-username="Sample Page" class="nav-item">
+                        <a href=""
+                            class="nav-link">
+                            <span class="pcoded-micon">
+                                <i class="feather icon-upload-cloud"></i>
+                            </span>
+                            <span
+                                class="pcoded-mtext">Publicaciones</span></a>
+                    </li>
+                    <li data-username="Sample Page" class="nav-item">
+                        <a href="/register"
+                            class="nav-link">
+                            <span class="pcoded-micon">
+                                <i class="feather icon-user-plus"></i>
+                            </span>
+                            <span
+                                class="pcoded-mtext">Registro de Usuario</span></a>
+                    </li>
+                    <li data-username="Disabled Menu" class="nav-item">
+                        <a href="" class="nav-link">
+                            <span class="pcoded-micon">
+                                <i class="feather icon-power"></i>
+                            </span>
+                            <span
+                                class="pcoded-mtext">Salir</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--    FIN MENU VERTICAL -->
+    <!-- INICIO ENCABEZADO HORIZONTAL -->
+    <header class="navbar pcoded-header navbar-expand-lg navbar-light">
+
+        <div class="m-header">
+            <a class="mobile-menu" id="mobile-collapse1">
+                <span></span></a>
+            <a class="b-brand">
+                <div>
+                    <img src="/static/images/logo-favicon.png" width="30px">
+                </div>
+                <span class="b-title">Sales Flow</span>
+            </a>
+        </div>
+        <a class="mobile-menu" id="mobile-header">
+            <i class="feather icon-more-horizontal"></i>
+        </a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li>
+                    <a href="#!" class="full-screen" onclick="javascript:toggleFullScreen()">
+                        <i class="feather icon-maximize"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <!--
+					<div class="main-search open">
+						<div class="input-group">
+							<input type="text" id="m-search" class="form-control" placeholder="Buscar. . ." style="width: 90px;">
+							<a href="#!" class="input-group-append search-close">
+								<i class="feather icon-x input-group-text"></i>
+							</a>
+							<span class="input-group-append search-btn btn btn-primary">
+								<i class="feather icon-search input-group-text"></i>
+							</span>
+						</div>
+					</div>
+					-->
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li>
+                    <div class="dropdown">
+                        <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                            <i class="icon feather icon-bell"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right notification">
+                            <div class="noti-head">
+                                <h6 class="d-inline-block m-b-0">Notificationes</h6>
+                            </div>
+                            <ul class="noti-body">
+                                <li class="n-title">
+                                    <p class="m-b-0">Cambio de Ubicación</p>
+                                </li>
+                                <li class="notification">
+                                    <div class="media">
+                                        <div class="media-body">
+                                            <p>
+                                                <strong>N° Cotización</strong>
+                                                <span class="n-time text-muted">
+                                                    <i class="icon feather icon-box"></i> Ubicación A3000</span>
+                                            </p>
+                                            <p>123456</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="notification">
+                                    <div class="media">
+                                        <div class="media-body">
+                                            <p>
+                                                <strong>N° Cotización</strong>
+                                                <span class="n-time text-muted">
+                                                    <i class="icon feather icon-box"></i> Ubicación A700</span>
+                                            </p>
+                                            <p>90987897</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="notification">
+                                    <div class="media">
+                                        <div class="media-body">
+                                            <p>
+                                                <strong>N° Cotización</strong>
+                                                <span class="n-time text-muted">
+                                                    <i class="icon feather icon-box"></i> Ubicación B800</span>
+                                            </p>
+                                            <p>567890098</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="noti-footer">
+                                <a href="">Mostrar Todo</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="dropdown drp-user">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon feather icon-settings"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right profile-notification">
+                            <div class="pro-head">
+                                <img src="https://appsrv1-147a1.kxcdn.com/dattaable-pro/images/user/avatar-2.jpg" class="img-radius" alt="User-Profile-Image">
+                                <span>{{.first_name}}</span>
+                                <a href="{{.BaseURI}}logout" class="dud-logout" title="Logout">
+                                    <i class="feather icon-log-out"></i>
+                                </a>
+                            </div>
+                            <ul class="pro-body">
+                                <li>
+                                    <a href="#!" class="dropdown-item">
+                                        <i class="feather icon-settings"></i> Datos Personales</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="dropdown-item">
+                                        <i class="feather icon-user"></i> Perfil</a>
+                                </li>
+                                <li>
+                                    <a href="message.html" class="dropdown-item">
+                                        <i class="feather icon-mail"></i> Mis Mensajes</a>
+                                </li>
+                                <!--<li><a href="auth-signin.html" class="dropdown-item"><i class="feather icon-lock"></i> Lock Screen</a></li>-->
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </header>
+{{end}}

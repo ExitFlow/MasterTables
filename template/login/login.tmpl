@@ -1,0 +1,42 @@
+{{define "title"}}Login{{end}}
+{{define "head"}}{{end}}
+{{define "content"}}
+<div class="body-login">
+        <div class="auth-wrapper">
+            <div class="auth-content">
+                <div class="card rounded shadow">
+                    <div class="card-body text-center">
+                        <div class="mb-4">
+                            <img src="/static/images/Logo_nuevo.png" alt="" width="50%" height="50%">
+                        </div>
+                        <h3 class="mb-4">
+                        MasterTables
+                        </h3>
+                        <span class="mb-0 text-muted"></span>
+                        <br/>
+                        <form method="post">
+
+                            <div class="input-group mb-3" class="feather icon-account">
+                                <span class="logo-per">
+                                    <i class="feather icon-user"></i>
+                                </span>
+                                <input type="email" class="form-control" placeholder="Usuario" id="email" name="email" value="{{.email}}" required>
+                            </div>
+
+                            <div class="input-group mb-4">
+                                <span class="logo-per" width="570px" height="400px">
+                                    <i class="feather icon-lock" ></i>
+                                </span>
+                                <input type="password" class="form-control" placeholder="Password" id="password" name="password" value="{{.password}}" required>
+                            </div>
+                            <button type="submit" name="login" class="btn btn-primary shadow-2 mb-4">Ingresar</button>
+                            <input type="hidden" name="token" value="{{.token}}">
+                        </form>
+                        <br/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{{end}}
+{{define "foot"}}{{end}}
